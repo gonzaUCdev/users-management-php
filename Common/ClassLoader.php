@@ -35,6 +35,7 @@ final class ClassLoader
         'AsignaturaCreditos' => 'Domain/ValueObjects/AsignaturaCreditos.php',
 
         'UserModel' => 'Domain/Models/UserModel.php',
+        'AsignaturaModel' => 'Domain/Models/AsignaturaModel.php',
         'EmailDestinationModel' => 'Domain/Models/EmailDestinationModel.php',
         'EmailSenderException' => 'Domain/Exceptions/EmailSenderException.php',
         'EmailSenderPort' => 'Application/Ports/Out/EmailSenderPort.php',
