@@ -66,6 +66,8 @@ final class ClassLoader
         'UpdateUserCommand' => 'Application/Services/Dto/Commands/UpdateUserCommand.php',
         'DeleteUserCommand' => 'Application/Services/Dto/Commands/DeleteUserCommand.php',
         'LoginCommand' => 'Application/Services/Dto/Commands/LoginCommand.php',
+        'CreateAsignaturaCommand' => 'Application/Services/Dto/Commands/CreateAsignaturaCommand.php',
+        'UpdateAsignaturaCommand' => 'Application/Services/Dto/Commands/UpdateAsignaturaCommand.php',
         'GetUserByIdQuery' => 'Application/Services/Dto/Queries/GetUserByIdQuery.php',
         'GetAllUsersQuery' => 'Application/Services/Dto/Queries/GetAllUsersQuery.php',
 
