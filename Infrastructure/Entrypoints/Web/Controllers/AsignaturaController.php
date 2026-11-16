@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 require_once __DIR__ . '/Mapper/AsignaturaWebMapper.php';
 
-require_once __DIR__ . '/../../../../../Application/Ports/In/CreateAsignaturaUseCase.php';
-require_once __DIR__ . '/../../../../../Application/Ports/In/UpdateAsignaturaUseCase.php';
-require_once __DIR__ . '/../../../../../Application/Ports/In/GetAsignaturaByIdUseCase.php';
-require_once __DIR__ . '/../../../../../Application/Ports/In/GetAllAsignaturasUseCase.php';
-require_once __DIR__ . '/../../../../../Application/Ports/In/DeleteAsignaturaUseCase.php';
+require_once __DIR__ . '/../../../../Application/Ports/In/CreateAsignaturaUseCase.php';
+require_once __DIR__ . '/../../../../Application/Ports/In/UpdateAsignaturaUseCase.php';
+require_once __DIR__ . '/../../../../Application/Ports/In/GetAsignaturaByIdUseCase.php';
+require_once __DIR__ . '/../../../../Application/Ports/In/GetAllAsignaturasUseCase.php';
+require_once __DIR__ . '/../../../../Application/Ports/In/DeleteAsignaturaUseCase.php';
 
-require_once __DIR__ . '/../../../../../Application/Services/Dto/Queries/GetAllAsignaturasQuery.php';
+require_once __DIR__ . '/../../../../Application/Services/Dto/Queries/GetAllAsignaturasQuery.php';
 
 final class AsignaturaController
 {
