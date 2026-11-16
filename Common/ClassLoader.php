@@ -17,6 +17,10 @@ final class ClassLoader
         'UserAlreadyExistsException' => 'Domain/Exceptions/UserAlreadyExistsException.php',
         'UserNotFoundException' => 'Domain/Exceptions/UserNotFoundException.php',
         'InvalidCredentialsException' => 'Domain/Exceptions/InvalidCredentialsException.php',
+        'InvalidAsignaturaIdException' => 'Domain/Exceptions/InvalidAsignaturaIdException.php',
+        'InvalidAsignaturaNombreException' => 'Domain/Exceptions/InvalidAsignaturaNombreException.php',
+        'InvalidAsignaturaCreditosException' => 'Domain/Exceptions/InvalidAsignaturaCreditosException.php',
+        'AsignaturaNotFoundException' => 'Domain/Exceptions/AsignaturaNotFoundException.php',
 
         'UserRoleEnum' => 'Domain/Enums/UserRoleEnum.php',
         'UserStatusEnum' => 'Domain/Enums/UserStatusEnum.php',
