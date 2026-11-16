@@ -89,6 +89,7 @@ final class ClassLoader
         'GetAllAsignaturasService' => 'Application/Services/GetAllAsignaturasService.php',
         'GetAsignaturaByIdService' => 'Application/Services/GetAsignaturaByIdService.php',
         'DeleteAsignaturaService' => 'Application/Services/DeleteAsignaturaService.php',
+        'UpdateAsignaturaService' => 'Application/Services/UpdateAsignaturaService.php',
         'UserApplicationMapper' => 'Application/Services/Mappers/UserApplicationMapper.php',
         'AsignaturaApplicationMapper' => 'Application/Services/Mappers/AsignaturaApplicationMapper.php',
 
