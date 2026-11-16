@@ -277,6 +277,108 @@ try {
             View::redirect('auth.forgot');
             break;
 
+        case 'asignaturas.create':
+            View::render('asignaturas/create', buildAsignaturaFormViewData('Registrar asignatura'));
+            break;
+
+        case 'asignaturas.store':
+            $controller = DependencyInjection::getAsignaturaController();
+            $form = getAsignaturaFormData();
+            $form['id'] = generateUuid4();
+            $errors = validateAsignaturaForm($form);
+
+            if (!empty($errors)) {
+                Flash::setOld($form);
+                Flash::setErrors($errors);
+                Flash::setMessage('Corrige los errores del formulario.');
+                View::redirect('asignaturas.create');
+            }
+
+            $request = new CreateAsignaturaWebRequest(
+                $form['id'],
+                $form['nombre'],
+                $form['nombreCompleto'],
+                $form['descripcion'],
+                $form['areaConocimiento'],
+                $form['carrera'],
+                (int) $form['numeroCreditos'],
+                $form['contenidoTematico'],
+                (int) $form['semestre'],
+                $form['profesor']
+            );
+
+            $controller->store($request);
+
+            Flash::setSuccess('Asignatura registrada correctamente.');
+            View::redirect('asignaturas.index');
+            break;
+
+        case 'asignaturas.index':
+            $controller = DependencyInjection::getAsignaturaController();
+            $asignaturas = $controller->index();
+            View::render('asignaturas/list', buildListAsignaturasViewData($asignaturas));
+            break;
+
+        case 'asignaturas.show':
+            $controller = DependencyInjection::getAsignaturaController();
+            $id = isset($_GET['id']) ? trim((string) $_GET['id']) : '';
+            $asignatura = $controller->show($id);
+            View::render('asignaturas/show', array(
+                'pageTitle' => 'Detalle de asignatura',
+                'asignatura' => $asignatura,
+                'message' => Flash::message(),
+            ));
+            break;
+
+        case 'asignaturas.edit':
+            $controller = DependencyInjection::getAsignaturaController();
+            $id = isset($_GET['id']) ? trim((string) $_GET['id']) : '';
+            $asignatura = $controller->show($id);
+            View::render('asignaturas/edit', buildEditAsignaturaViewData($asignatura));
+            break;
+
+        case 'asignaturas.update':
+            $controller = DependencyInjection::getAsignaturaController();
+            $form = getAsignaturaFormData();
+            $form['id'] = isset($_POST['id']) ? trim((string) $_POST['id']) : '';
+            $errors = validateAsignaturaForm($form);
+
+            if (!empty($errors)) {
+                Flash::setOld($form);
+                Flash::setErrors($errors);
+                Flash::setMessage('Corrige los errores del formulario.');
+                header('Location: ?route=asignaturas.edit&id=' . urlencode($form['id']));
+                exit;
+            }
+
+            $request = new UpdateAsignaturaWebRequest(
+                $form['id'],
+                $form['nombre'],
+                $form['nombreCompleto'],
+                $form['descripcion'],
+                $form['areaConocimiento'],
+                $form['carrera'],
+                (int) $form['numeroCreditos'],
+                $form['contenidoTematico'],
+                (int) $form['semestre'],
+                $form['profesor']
+            );
+
+            $controller->update($request);
+
+            Flash::setSuccess('Asignatura actualizada correctamente.');
+            View::redirect('asignaturas.index');
+            break;
+
+        case 'asignaturas.delete':
+            $controller = DependencyInjection::getAsignaturaController();
+            $id = isset($_POST['id']) ? trim((string) $_POST['id']) : '';
+            $controller->delete($id);
+
+            Flash::setSuccess('Asignatura eliminada correctamente.');
+            View::redirect('asignaturas.index');
+            break;
+
         default:
             throw new RuntimeException('Acción no soportada.');
     }
@@ -309,6 +411,27 @@ try {
         case 'users.show':
         case 'users.edit':
             View::redirect('users.index');
+            break;
+
+        case 'asignaturas.store':
+            Flash::setOld(getAsignaturaFormData());
+            View::redirect('asignaturas.create');
+            break;
+
+        case 'asignaturas.update':
+            $asignaturaUpdateId = trim((string) ($_POST['id'] ?? ''));
+            Flash::setOld(getAsignaturaFormData());
+            header('Location: ?route=asignaturas.edit&id=' . urlencode($asignaturaUpdateId));
+            exit;
+
+        case 'asignaturas.show':
+        case 'asignaturas.edit':
+            View::redirect('asignaturas.index');
+            break;
+
+        case 'asignaturas.delete':
+            Flash::setMessage($msg);
+            View::redirect('asignaturas.index');
             break;
 
         case 'users.delete':
