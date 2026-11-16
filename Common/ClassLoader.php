@@ -48,6 +48,9 @@ final class ClassLoader
         'GetAllUsersUseCase' => 'Application/Ports/In/GetAllUsersUseCase.php',
         'DeleteUserUseCase' => 'Application/Ports/In/DeleteUserUseCase.php',
         'LoginUseCase' => 'Application/Ports/In/LoginUseCase.php',
+        'CreateAsignaturaUseCase' => 'Application/Ports/In/CreateAsignaturaUseCase.php',
+        'GetAllAsignaturasUseCase' => 'Application/Ports/In/GetAllAsignaturasUseCase.php',
+        'GetAsignaturaByIdUseCase' => 'Application/Ports/In/GetAsignaturaByIdUseCase.php',
 
         'SaveUserPort' => 'Application/Ports/Out/SaveUserPort.php',
         'UpdateUserPort' => 'Application/Ports/Out/UpdateUserPort.php',
