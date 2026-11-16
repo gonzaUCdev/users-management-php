@@ -86,6 +86,7 @@ final class ClassLoader
         'DeleteUserService' => 'Application/Services/DeleteUserService.php',
         'LoginService' => 'Application/Services/LoginService.php',
         'UserApplicationMapper' => 'Application/Services/Mappers/UserApplicationMapper.php',
+        'AsignaturaApplicationMapper' => 'Application/Services/Mappers/AsignaturaApplicationMapper.php',
 
         'Connection' => 'Infrastructure/Adapters/Persistence/MySQL/Config/Connection.php',
         'UserPersistenceDto' => 'Infrastructure/Adapters/Persistence/MySQL/Dto/UserPersistenceDto.php',
