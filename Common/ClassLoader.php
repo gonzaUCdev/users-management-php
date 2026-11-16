@@ -30,6 +30,10 @@ final class ClassLoader
         'UserEmail' => 'Domain/ValueObjects/UserEmail.php',
         'UserPassword' => 'Domain/ValueObjects/UserPassword.php',
 
+        'AsignaturaId' => 'Domain/ValueObjects/AsignaturaId.php',
+        'AsignaturaNombre' => 'Domain/ValueObjects/AsignaturaNombre.php',
+        'AsignaturaCreditos' => 'Domain/ValueObjects/AsignaturaCreditos.php',
+
         'UserModel' => 'Domain/Models/UserModel.php',
         'EmailDestinationModel' => 'Domain/Models/EmailDestinationModel.php',
         'EmailSenderException' => 'Domain/Exceptions/EmailSenderException.php',
