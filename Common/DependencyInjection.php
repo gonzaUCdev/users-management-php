@@ -207,6 +207,27 @@ final class DependencyInjection
         );
     }
 
+    public static function getAsignaturaWebMapper(): AsignaturaWebMapper
+    {
+        ClassLoader::loadClass('AsignaturaWebMapper');
+
+        return new AsignaturaWebMapper();
+    }
+
+    public static function getAsignaturaController(): AsignaturaController
+    {
+        ClassLoader::loadClass('AsignaturaController');
+
+        return new AsignaturaController(
+            self::getCreateAsignaturaUseCase(),
+            self::getUpdateAsignaturaUseCase(),
+            self::getGetAsignaturaByIdUseCase(),
+            self::getGetAllAsignaturasUseCase(),
+            self::getDeleteAsignaturaUseCase(),
+            self::getAsignaturaWebMapper()
+        );
+    }
+
     public static function getLoginUseCase(): LoginUseCase
     {
         ClassLoader::loadClass('LoginService');
