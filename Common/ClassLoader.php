@@ -56,6 +56,10 @@ final class ClassLoader
         'GetAllUsersPort' => 'Application/Ports/Out/GetAllUsersPort.php',
         'DeleteUserPort' => 'Application/Ports/Out/DeleteUserPort.php',
 
+        'SaveAsignaturaPort' => 'Application/Ports/Out/SaveAsignaturaPort.php',
+        'GetAsignaturaByIdPort' => 'Application/Ports/Out/GetAsignaturaByIdPort.php',
+        'GetAllAsignaturasPort' => 'Application/Ports/Out/GetAllAsignaturasPort.php',
+
         'CreateUserCommand' => 'Application/Services/Dto/Commands/CreateUserCommand.php',
         'UpdateUserCommand' => 'Application/Services/Dto/Commands/UpdateUserCommand.php',
         'DeleteUserCommand' => 'Application/Services/Dto/Commands/DeleteUserCommand.php',
