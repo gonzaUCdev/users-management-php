@@ -112,6 +112,8 @@ final class ClassLoader
         'AsignaturaResponse' => 'Infrastructure/Entrypoints/Web/Controllers/Dto/AsignaturaResponse.php',
         'UserWebMapper' => 'Infrastructure/Entrypoints/Web/Controllers/Mapper/UserWebMapper.php',
         'UserController' => 'Infrastructure/Entrypoints/Web/Controllers/UserController.php',
+        'AsignaturaWebMapper' => 'Infrastructure/Entrypoints/Web/Controllers/Mapper/AsignaturaWebMapper.php',
+        'AsignaturaController' => 'Infrastructure/Entrypoints/Web/Controllers/AsignaturaController.php',
         'WebRoutes' => 'Infrastructure/Entrypoints/Web/Controllers/Config/WebRoutes.php',
 
         'View' => 'Infrastructure/Entrypoints/Web/Presentation/View.php',
