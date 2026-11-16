@@ -127,6 +127,65 @@ final class DependencyInjection
         );
     }
 
+    public static function getAsignaturaRepository(): AsignaturaRepositoryMySQL
+    {
+        ClassLoader::loadClass('AsignaturaRepositoryMySQL');
+
+        return new AsignaturaRepositoryMySQL(
+            self::getPdo(),
+            new AsignaturaPersistenceMapper()
+        );
+    }
+
+    public static function getCreateAsignaturaUseCase(): CreateAsignaturaUseCase
+    {
+        ClassLoader::loadClass('CreateAsignaturaService');
+
+        return new CreateAsignaturaService(
+            self::getAsignaturaRepository()
+        );
+    }
+
+    public static function getUpdateAsignaturaUseCase(): UpdateAsignaturaUseCase
+    {
+        ClassLoader::loadClass('UpdateAsignaturaService');
+        $repository = self::getAsignaturaRepository();
+
+        return new UpdateAsignaturaService(
+            $repository,
+            $repository
+        );
+    }
+
+    public static function getGetAsignaturaByIdUseCase(): GetAsignaturaByIdUseCase
+    {
+        ClassLoader::loadClass('GetAsignaturaByIdService');
+
+        return new GetAsignaturaByIdService(
+            self::getAsignaturaRepository()
+        );
+    }
+
+    public static function getGetAllAsignaturasUseCase(): GetAllAsignaturasUseCase
+    {
+        ClassLoader::loadClass('GetAllAsignaturasService');
+
+        return new GetAllAsignaturasService(
+            self::getAsignaturaRepository()
+        );
+    }
+
+    public static function getDeleteAsignaturaUseCase(): DeleteAsignaturaUseCase
+    {
+        ClassLoader::loadClass('DeleteAsignaturaService');
+        $repository = self::getAsignaturaRepository();
+
+        return new DeleteAsignaturaService(
+            $repository,
+            $repository
+        );
+    }
+
     public static function getUserWebMapper(): UserWebMapper
     {
         ClassLoader::loadClass('UserWebMapper');
