@@ -100,6 +100,7 @@ final class ClassLoader
         'AsignaturaPersistenceDto' => 'Infrastructure/Adapters/Persistence/MySQL/Dto/AsignaturaPersistenceDto.php',
         'AsignaturaEntity' => 'Infrastructure/Adapters/Persistence/MySQL/Entity/AsignaturaEntity.php',
         'AsignaturaPersistenceMapper' => 'Infrastructure/Adapters/Persistence/MySQL/Mapper/AsignaturaPersistenceMapper.php',
+        'AsignaturaRepositoryMySQL' => 'Infrastructure/Adapters/Persistence/MySQL/Repository/AsignaturaRepositoryMySQL.php',
         'UserRepositoryMySQL' => 'Infrastructure/Adapters/Persistence/MySQL/Repository/UserRepositoryMySQL.php',
 
         'CreateUserWebRequest' => 'Infrastructure/Entrypoints/Web/Controllers/Dto/CreateUserRequest.php',
