@@ -629,3 +629,104 @@ function validateUpdateUserForm(array $form): array
 
     return $errors;
 }
+
+
+/**
+ * @return array<string, mixed>
+ */
+function buildListAsignaturasViewData(array $asignaturas): array
+{
+    return array(
+        'pageTitle' => 'Lista de asignaturas',
+        'asignaturas' => $asignaturas,
+        'message' => Flash::message(),
+        'success' => Flash::success(),
+    );
+}
+
+/**
+ * @return array<string, mixed>
+ */
+function buildAsignaturaFormViewData(string $pageTitle): array
+{
+    return array(
+        'pageTitle' => $pageTitle,
+        'message' => Flash::message(),
+        'success' => Flash::success(),
+        'errors' => Flash::errors(),
+        'old' => Flash::old(),
+    );
+}
+
+/**
+ * @return array<string, mixed>
+ */
+function buildEditAsignaturaViewData(AsignaturaResponse $asignatura): array
+{
+    return array(
+        'pageTitle' => 'Editar asignatura',
+        'asignatura' => $asignatura,
+        'message' => Flash::message(),
+        'errors' => Flash::errors(),
+        'old' => Flash::old(),
+    );
+}
+
+/**
+ * @return array<string, string>
+ */
+function getAsignaturaFormData(): array
+{
+    return array(
+        'nombre' => isset($_POST['nombre']) ? trim((string) $_POST['nombre']) : '',
+        'nombreCompleto' => isset($_POST['nombreCompleto']) ? trim((string) $_POST['nombreCompleto']) : '',
+        'descripcion' => isset($_POST['descripcion']) ? trim((string) $_POST['descripcion']) : '',
+        'areaConocimiento' => isset($_POST['areaConocimiento']) ? trim((string) $_POST['areaConocimiento']) : '',
+        'carrera' => isset($_POST['carrera']) ? trim((string) $_POST['carrera']) : '',
+        'numeroCreditos' => isset($_POST['numeroCreditos']) ? trim((string) $_POST['numeroCreditos']) : '',
+        'contenidoTematico' => isset($_POST['contenidoTematico']) ? trim((string) $_POST['contenidoTematico']) : '',
+        'semestre' => isset($_POST['semestre']) ? trim((string) $_POST['semestre']) : '',
+        'profesor' => isset($_POST['profesor']) ? trim((string) $_POST['profesor']) : '',
+    );
+}
+
+/**
+ * @param array<string, string> $form
+ * @return array<string, string>
+ */
+function validateAsignaturaForm(array $form): array
+{
+    $errors = array();
+
+    if ($form['nombre'] === '') {
+        $errors['nombre'] = 'El nombre es obligatorio.';
+    } elseif (mb_strlen($form['nombre']) < 3) {
+        $errors['nombre'] = 'El nombre debe tener al menos 3 caracteres.';
+    }
+
+    if ($form['nombreCompleto'] === '') {
+        $errors['nombreCompleto'] = 'El nombre completo es obligatorio.';
+    }
+
+    if ($form['areaConocimiento'] === '') {
+        $errors['areaConocimiento'] = 'El área de conocimiento es obligatoria.';
+    }
+
+    if ($form['carrera'] === '') {
+        $errors['carrera'] = 'La carrera es obligatoria.';
+    }
+
+    if (filter_var($form['numeroCreditos'], FILTER_VALIDATE_INT, array('options' => array('min_range' => 1, 'max_range' => 10))) === false) {
+        $errors['numeroCreditos'] = 'Los créditos deben ser un número entre 1 y 10.';
+    }
+
+    if (filter_var($form['semestre'], FILTER_VALIDATE_INT, array('options' => array('min_range' => 1, 'max_range' => 12))) === false) {
+        $errors['semestre'] = 'El semestre debe ser un número entre 1 y 12.';
+    }
+
+    if ($form['profesor'] === '') {
+        $errors['profesor'] = 'El profesor es obligatorio.';
+    }
+
+    return $errors;
+}
