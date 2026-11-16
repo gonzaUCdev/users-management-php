@@ -97,6 +97,9 @@ final class ClassLoader
         'UserPersistenceDto' => 'Infrastructure/Adapters/Persistence/MySQL/Dto/UserPersistenceDto.php',
         'UserEntity' => 'Infrastructure/Adapters/Persistence/MySQL/Entity/UserEntity.php',
         'UserPersistenceMapper' => 'Infrastructure/Adapters/Persistence/MySQL/Mapper/UserPersistenceMapper.php',
+        'AsignaturaPersistenceDto' => 'Infrastructure/Adapters/Persistence/MySQL/Dto/AsignaturaPersistenceDto.php',
+        'AsignaturaEntity' => 'Infrastructure/Adapters/Persistence/MySQL/Entity/AsignaturaEntity.php',
+        'AsignaturaPersistenceMapper' => 'Infrastructure/Adapters/Persistence/MySQL/Mapper/AsignaturaPersistenceMapper.php',
         'UserRepositoryMySQL' => 'Infrastructure/Adapters/Persistence/MySQL/Repository/UserRepositoryMySQL.php',
 
         'CreateUserWebRequest' => 'Infrastructure/Entrypoints/Web/Controllers/Dto/CreateUserRequest.php',
