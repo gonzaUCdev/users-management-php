@@ -114,3 +114,26 @@ Aplicación web PHP para la gestión de usuarios: registro, listado, visualizaci
 
 - Credenciales fuera del código fuente y del historial de git
 
+---
+
+## Entidad Asignatura (ejercicio 10)
+
+Además de la entidad común `Usuario`, el proyecto incluye el CRUDL de **Asignatura** con los atributos:
+
+| Atributo | Tipo | Regla |
+|---|---|---|
+| nombre | texto | obligatorio, mínimo 3 caracteres (Value Object `AsignaturaNombre`) |
+| nombreCompleto | texto | obligatorio |
+| descripcion | texto | opcional |
+| areaConocimiento | texto | obligatorio |
+| carrera | texto | obligatorio |
+| numeroCreditos | entero | entre 1 y 10 (Value Object `AsignaturaCreditos`) |
+| contenidoTematico | texto | opcional |
+| semestre | entero | entre 1 y 12 |
+| profesor | texto | obligatorio |
+
+### Puesta en marcha
+
+1. Ejecutar `Infrastructure/Adapters/Persistence/MySQL/Database/mysql/asignatura.sql` sobre la base `crud_usuarios`.
+2. Iniciar sesión en la aplicación y usar el menú **Registrar asignatura** / **Listar asignaturas**.
+
