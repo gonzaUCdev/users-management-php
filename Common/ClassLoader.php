@@ -85,6 +85,8 @@ final class ClassLoader
         'GetAllUsersService' => 'Application/Services/GetAllUsersService.php',
         'DeleteUserService' => 'Application/Services/DeleteUserService.php',
         'LoginService' => 'Application/Services/LoginService.php',
+        'CreateAsignaturaService' => 'Application/Services/CreateAsignaturaService.php',
+        'GetAllAsignaturasService' => 'Application/Services/GetAllAsignaturasService.php',
         'UserApplicationMapper' => 'Application/Services/Mappers/UserApplicationMapper.php',
         'AsignaturaApplicationMapper' => 'Application/Services/Mappers/AsignaturaApplicationMapper.php',
 
